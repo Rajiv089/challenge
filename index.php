@@ -19,25 +19,40 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <h2>Calendar</h2>
+            <div class="brand">
+                <img src="images/calenderimg.png">
 
-        <div class="col-md-6 text-center">
-                <div class="brand">
-                    <img src="images/calenderimg.png">
+                <div class="form-group">
+                    <div class='input-group date' >
+                        <input type='text' class="form-control" id="datetimepicker1" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
-                    <h2>Calendar</h2>
-                    Player 1 - Orange<br/>
-                    Player 2 - Navyblue <br/><br><br>
-
-                <?php
-                //Load our file
-                require 'DayPicker.php';
-                ?>
+            </div>
 
 
         </div>
 
-        <div class="col-md-3"></div>
+
+        <div class="col-md-8 text-center">
+
+            <?php
+            //Load our file
+            require 'DayPicker.php';
+            $cc = new day(28, 03, 2014);
+            $cc->demo();
+
+            ?>
+
+        </div>
+
+        <div class="col-md-1">
+
+        </div>
     </div>
 </div>
 
