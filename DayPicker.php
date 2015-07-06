@@ -1,7 +1,8 @@
 <?php
 
 
- class day {
+ class day
+ {
 
     protected $days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
     protected $numDays;
@@ -16,23 +17,22 @@
     $this->aInput = array('d' => $day, 'm' => $month, 'y' => $year);
     }
 
-public function demo()
-    {
-        $demoYear = $this->startYear;
+
+     public function viewCal() {
+        $Year = $this->startYear;
         $totalDays = -1;
 
-        while ($demoYear < 2015) {
+        while ($Year < 2015) {
 
-            echo "<h2>$demoYear</h2>
-
-            <table align='center' border='6'>";
-            $demoMonth = 1;
-            while ($demoMonth < 12) {
-                echo "<tr><td colspan='7'><b>Month $demoMonth</b></td></tr>";
+            echo "<h2>$Year</h2>
+            <table align='center' class='table'>";
+            $Month = 1;
+            while ($Month < 12) {
+                echo "<tr><td colspan='7'><b>Month $Month</b></td></tr>";
                 echo "<tr><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td><td>Sunday</td></tr>";
 
-                $dayCount = ($demoMonth % 2 == 1) ? 33 : 32;
-                $dayCount = ($demoMonth == 11 && $demoYear % 5 == 0) ? 32 : $dayCount;
+                $dayCount = ($Month % 2 == 1) ? 33 : 32;
+                $dayCount = ($Month == 11 && $Year % 5 == 0) ? 32 : $dayCount;
 
                 $demoDay = 1;
 
@@ -57,15 +57,13 @@ public function demo()
                     $demoDay++;
                 }
                 echo "</tr>";
-                $demoMonth++;
+                $Month++;
             }
             echo "
             </table><hr />";
-            $demoYear++;
+            $Year++;
         }
     }
-
-
 }
 
 ?>
